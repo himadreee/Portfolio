@@ -28,6 +28,7 @@ export default function Portfolio() {
       description:
         "Built a robust core banking system with secure management of accounts, branches, transfers, loans, and deposits. Ensured ACID compliance using stored procedures, triggers, and indexing.",
       coverImage: "bank1.png",
+      repoLink: "https://github.com/Kisara-k/bank-sys"
     },
     {
       title: "Budget Tracker",
@@ -35,29 +36,26 @@ export default function Portfolio() {
       description:
         "Personal finance manager with categorized transaction tracking, interactive charts, and filters for better budgeting decisions. Includes REST API backend and dynamic front-end UI.",
       coverImage: "budget.png",
+      repoLink: "https://github.com/himadreee/Budget-Tracker"
     },
     {
       title: "ResumeRover – Intelligent Resume Screening System",
       tech: "FastAPI, React, MongoDB",
       description:
         "Developed as part of a group project with a microservices-based architecture for AI-powered resume screening. Responsible for the real-time analytics and dashboard subsystem.",
-      coverImage: "/placeholder.svg?height=160&width=320",
+      coverImage: "resumee.png?height=160&width=320",
+      repoLink: "https://github.com/ResumeRover/Main"
     },
     {
-      title: "EventBun – Event Ticketing and Management Platform",
-      tech: "Flutter, React, Node.js, PostgreSQL",
-      description:
-        "An all-in-one event platform for ticket creation, user authentication, real-time analytics, email reminders, and secure payments. Includes event discovery and attendee management features.",
-      status: "Ongoing",
-      coverImage: "/placeholder.svg?height=160&width=320",
-    },
-    {
-      title: "MediSense App",
-      tech: "Flutter, MySQL, Ballerina",
-      description:
-        "A mobile app for booking doctor appointments and ordering medicines online. Integrated real-time notifications, pharmacy services, scheduling, and secure payment functionality.",
-      coverImage: "/placeholder.svg?height=160&width=320",
-    },
+  title: "EventBun – Event Ticketing and Management Platform",
+  tech: "Flutter, React, Node.js, PostgreSQL",
+  description:
+    "An all-in-one event platform for ticket creation, user authentication, real-time analytics, email reminders, and secure payments. Includes event discovery and attendee management features.",
+  status: "Ongoing",
+  coverImage: "evenbn.png",
+  className: "eventbun-img", // custom class for styling
+  repoLink: "https://github.com/pvnzki/EventBn"
+},
   ]
 
   const skills = {
@@ -69,17 +67,30 @@ export default function Portfolio() {
   }
 
   const certifications = [
-    "AWS Certified Cloud Practitioner – By AWS",
-    "Postman API Fundamentals Student Expert",
-    "GitHub Foundations Certificate",
-  ]
+  {
+    name: "AWS Certified Cloud Practitioner – By AWS",
+    link: "https://www.credly.com/badges/9eeafce3-8624-48d0-ba71-371d2c602fcd/public_url"
+  },
+  {
+    name: "Postman API Fundamentals Student Expert",
+    link: "https://badgr.com/public/assertions/1uwhsTfkSxyLT3Oe9ZfCSA?identity__email=himadree.22@cse.mrt.ac.lk"
+  },
+  {
+    name: "GitHub Foundations Certificate",
+    link: "https://www.credly.com/badges/f9ecec96-f4dc-42d5-9021-d18525582cae"
+  },
+  {
+    name: "Getting Started with MongoDB Atlas",
+    link: "https://learn.mongodb.com/c/wjaf3q_TR6-onJijJf9HYg"
+  }
+];
 
-  const activities = [
+  /*const activities = [
     "IEEE Xtreme 18.0 – Certificate of Participation",
     "Organizing Committee Member – ADScAI Symposium, Dept. of Computer Science & Engineering, University of Moratuwa",
     "CSE Career Fair 2025 - Company Coordinator",
     "Maths Society Musaeus College - Member",
-  ]
+  ]*/
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-100">
@@ -146,17 +157,45 @@ export default function Portfolio() {
               projects and drive technological advancement.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 text-sm shadow-md">
-                <Mail className="w-4 h-4 mr-2" />
-                Get In Touch
-              </Button>
-              <Button
-                variant="outline"
-                className="border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-50 px-6 py-2 text-sm bg-transparent"
+              <a
+                href="mailto:asankahimadree@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
               >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                View Projects
-              </Button>
+                <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 text-sm shadow-md">
+                  <Mail className="w-4 h-4 mr-2" />
+                  Get In Touch
+                </Button>
+              </a>
+              <a
+                href="https://github.com/himadreee"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
+              >
+                <Button
+                  variant="outline"
+                  className="border-2 border-slate-800 text-slate-800 hover:bg-slate-100 px-6 py-2 text-sm bg-transparent flex items-center"
+                >
+                  <Github className="w-4 h-4 mr-2" />
+                  GitHub
+                </Button>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/himadree-gallage-4ab6422a4/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
+              >
+                <Button
+                  variant="outline"
+                  className="border-2 border-blue-700 text-blue-700 hover:bg-blue-50 px-6 py-2 text-sm bg-transparent flex items-center"
+                >
+                  <Linkedin className="w-4 h-4 mr-2" />
+                  LinkedIn
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -359,99 +398,101 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-16 px-6 bg-slate-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-slate-800 text-center mb-12">Featured Projects</h2>
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                className="border-0 shadow-md bg-white hover:shadow-lg transition-all duration-300 overflow-hidden group"
-              >
-                {/* Cover Image */}
-                <div className="relative h-32 overflow-hidden">
-                  <Image
-                    src={project.coverImage || "/placeholder.svg"}
-                    alt={`${project.title} cover`}
-                    width={320}
-                    height={128}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                  {project.status && (
-                    <Badge className="absolute top-2 right-2 bg-emerald-500 text-white px-2 py-1 text-xs">
-                      {project.status}
-                    </Badge>
-                  )}
-                </div>
-
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-slate-800 text-base leading-tight">{project.title}</CardTitle>
-                  <CardDescription className="text-emerald-600 font-semibold text-sm">{project.tech}</CardDescription>
-                </CardHeader>
-
-                <CardContent className="pt-0">
-                  <p className="text-slate-700 leading-relaxed text-sm mb-4">{project.description}</p>
-                  <div className="flex gap-2">
-            
-                    <Button
-  size="sm"
-  className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1 shadow-md"
->
-  <Github className="w-3 h-3 mr-1" />
-  Code
-</Button>
-
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+{/* Projects Section */}
+<section id="projects" className="py-16 px-6 bg-slate-50">
+  <div className="container mx-auto">
+    <h2 className="text-3xl font-bold text-slate-800 text-center mb-12">
+      Featured Projects
+    </h2>
+    <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-6">
+      {projects.map((project, index) => (
+        <Card
+          key={index}
+          className="border-0 shadow-md bg-white hover:shadow-lg transition-all duration-300 overflow-hidden group"
+        >
+          {/* Cover Image */}
+          <div className="relative h-48 md:h-64 overflow-hidden">
+            <div className="absolute inset-0 bg-black z-0" />
+            <Image
+              src={project.coverImage || "/placeholder.svg"}
+              alt={`${project.title} cover`}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300 z-10"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-20"></div>
+            {project.status && (
+              <Badge className="absolute top-2 right-2 bg-emerald-500 text-white px-2 py-1 text-xs">
+                {project.status}
+              </Badge>
+            )}
           </div>
-        </div>
-      </section>
+
+          <CardHeader className="pb-2">
+            <CardTitle className="text-slate-800 text-base leading-tight">
+              {project.title}
+            </CardTitle>
+            <CardDescription className="text-emerald-600 font-semibold text-sm">
+              {project.tech}
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent className="pt-0">
+            <p className="text-slate-700 leading-relaxed text-sm mb-4">
+              {project.description}
+            </p>
+            <div className="flex gap-2">
+              <a
+  href={project.repoLink}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Button
+    size="sm"
+    className="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-1 shadow-md"
+  >
+    <Github className="w-3 h-3 mr-1" />
+    Code
+  </Button>
+</a>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Certifications Section */}
       <section className="py-12 px-6">
-        <div className="container mx-auto">
-          <h2 className="text-2xl font-bold text-slate-800 text-center mb-8">Certifications</h2>
-          <div className="max-w-2xl mx-auto space-y-2">
-            {certifications.map((cert, index) => (
-              <Card key={index} className="border-0 shadow-sm bg-white hover:shadow-md transition-all duration-300">
-                <CardContent className="p-3">
-                  <div className="flex items-center">
-                    <div className="p-1.5 bg-emerald-100 rounded-lg mr-3">
-                      <Award className="w-4 h-4 text-emerald-600" />
-                    </div>
-                    <span className="text-slate-800 font-medium text-sm">{cert}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Extra Curricular Activities Section */}
-      <section className="py-12 px-6 bg-slate-50">
-        <div className="container mx-auto">
-          <h2 className="text-2xl font-bold text-slate-800 text-center mb-8">Extra Curricular Activities</h2>
-          <div className="max-w-2xl mx-auto space-y-2">
-            {activities.map((activity, index) => (
-              <Card key={index} className="border-0 shadow-sm bg-white hover:shadow-md transition-all duration-300">
-                <CardContent className="p-3">
-                  <div className="flex items-center">
-                    <div className="p-1.5 bg-teal-100 rounded-lg mr-3">
-                      <Users className="w-4 h-4 text-teal-600" />
-                    </div>
-                    <span className="text-slate-800 font-medium text-sm">{activity}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+  <div className="container mx-auto">
+    <h2 className="text-2xl font-bold text-slate-800 text-center mb-8">Certifications</h2>
+    <div className="max-w-2xl mx-auto space-y-2">
+      {certifications.map((cert, index) => (
+        <Card
+          key={index}
+          className="border-0 shadow-sm bg-white hover:shadow-md transition-all duration-300"
+        >
+          <CardContent className="p-3">
+            <div className="flex items-center">
+              <div className="p-1.5 bg-emerald-100 rounded-lg mr-3">
+                <Award className="w-4 h-4 text-emerald-600" />
+              </div>
+              <a
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-800 font-medium text-sm hover:underline"
+              >
+                {cert.name}
+              </a>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section id="contact" className="py-16 px-6 bg-gradient-to-br from-emerald-50 via-teal-50 to-slate-100">

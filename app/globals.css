@@ -39,6 +39,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -120,4 +121,12 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.eventbun-img {
+  background-color: black;        /* make background black */
+  display: inline-block;
+  padding: 10px;                  /* space between image and black bg */
+  transform: translateY(20px);    /* lowers the image */
+  border-radius: 8px;             /* optional, for rounded edges */
 }
